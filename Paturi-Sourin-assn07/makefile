@@ -1,0 +1,17 @@
+
+run: p1
+	./assn07
+
+p1: p1.o Matrix.o
+	g++ -o assn07 p1.o Matrix.o
+
+p1.o: Matrix.o
+	g++ -c -g -Wall -std=c++14 -pedantic-errors  p1.cpp
+
+Matrix.o: Matrix.cpp Matrix.h
+	g++ -c -g -Wall -std=c++14 -pedantic-errors Matrix.cpp
+
+clean:
+	/bin/rm p1.o
+	/bin/rm Matrix.o
+	/bin/rm assn07
